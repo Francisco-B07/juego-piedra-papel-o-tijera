@@ -9,7 +9,7 @@ export function initEstrella() {
       const style = document.createElement("style");
       style.textContent = `
             #estrella{
-                Margin-top: 20px;
+                Margin-top: 15px;
                 width: 1px;
                 height: 1px;
                 border-bottom: 225px solid var(--estrella-${resultado});

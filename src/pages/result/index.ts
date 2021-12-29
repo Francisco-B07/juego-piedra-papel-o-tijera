@@ -19,7 +19,7 @@ export function initResult(params) {
         .container-score{
           margin-top: 90px;
           width: 259px;
-          height: 217px;
+          height: 200px;
           background-color: #FFFFFF;
           border: 10px solid #000000;
           border-radius: 10px; 

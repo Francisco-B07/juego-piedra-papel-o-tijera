@@ -8,8 +8,8 @@
   "source": "src/index.html",
   "scripts": {
     "dev": "parcel",
-    "build": "parcel build",
-    "deploy": "gh-pages -d ",
+    "build": "parcel build --public-url /juego-piedra-papel-o-tijera",
+    "deploy": "gh-pages -d ./dist",
     "build-and-deploy": "npm run build && npm run deploy"
   },
   "dependencies": {

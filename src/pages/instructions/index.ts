@@ -21,7 +21,7 @@ export function initInstructions(params) {
         
 
         .instrucciones{
-          padding: 90px 27px 0px 27px;
+          padding: 70px 27px 0px 27px;
           text-align: center;
         }
 

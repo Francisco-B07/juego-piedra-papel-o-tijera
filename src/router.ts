@@ -21,7 +21,7 @@ const routes = [
   },
 ];
 
-const BASE_PATH = "/juego-desafio-m5";
+const BASE_PATH = "/juego-piedra-papel-o-tijera";
 
 function isGithubPages() {
   return location.host.includes("github.io");
@@ -46,7 +46,10 @@ export function initRouter(container: Element) {
       }
     }
   }
-  if (location.pathname == "/") {
+  if (
+    location.pathname == "/juego-piedra-papel-o-tijera/" ||
+    location.pathname == "/"
+  ) {
     goTo("/welcome");
   } else {
     handleRoute(location.pathname);
