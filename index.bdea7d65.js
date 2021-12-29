@@ -508,7 +508,7 @@ const routes = [
         component: _result.initResult
     }, 
 ];
-const BASE_PATH = "/juego-desafio-m5";
+const BASE_PATH = "/juego-piedra-papel-o-tijera";
 function isGithubPages() {
     return location.host.includes("github.io");
 }
@@ -529,7 +529,7 @@ function initRouter(container) {
             container.appendChild(el);
         }
     }
-    if (location.pathname == "/") goTo("/welcome");
+    if (location.pathname == "/juego-piedra-papel-o-tijera/" || location.pathname == "/") goTo("/welcome");
     else handleRoute(location.pathname);
     window.onpopstate = function() {
         handleRoute(location.pathname);
@@ -570,7 +570,13 @@ function initWelcome(params) {
         }
 
         .titulo{
-          padding: 115px 34px 74px 34px;          
+          padding: 115px 34px 74px 34px;  
+          
+        }
+        @media (min-width: 320px){
+          .titulo{
+          padding: 60px 20px 60px 20px;  
+          }
         }
 
         .container-boton{
@@ -594,7 +600,7 @@ function initWelcome(params) {
   <div class="container">
     <div class="container-page">
       <div class="titulo">    
-        <text-el tag="h1"> Papel Papel </text-el>
+        <text-el tag="h1"> Piedra Papel </text-el>
         <span>ó</span> 
         <text-el tag="h1">Tijera</text-el>
       </div>
@@ -710,7 +716,7 @@ function initInstructions(params) {
         
 
         .instrucciones{
-          padding: 90px 27px 0px 27px;
+          padding: 70px 27px 0px 27px;
           text-align: center;
         }
 
@@ -1053,7 +1059,7 @@ function initResult(params) {
         .container-score{
           margin-top: 90px;
           width: 259px;
-          height: 217px;
+          height: 200px;
           background-color: #FFFFFF;
           border: 10px solid #000000;
           border-radius: 10px; 
@@ -1178,6 +1184,11 @@ function initButton() {
             font-size: 40px;
             text-align: center;
             color: #D8FCFC;
+        }
+        @media (min-width: 320px){
+          .root{
+            font-size: 30px;
+          }
         }
       `;
             this.shadow.appendChild(style);
@@ -1368,7 +1379,7 @@ function initEstrella() {
             const style = document.createElement("style");
             style.textContent = `
             #estrella{
-                Margin-top: 20px;
+                Margin-top: 15px;
                 width: 1px;
                 height: 1px;
                 border-bottom: 225px solid var(--estrella-${resultado});
@@ -1396,7 +1407,13 @@ function initEstrella() {
                 color: white; 
                 transform: rotate(-25deg);
               }
+              @media (min-width: 320px){
+                .resultado{                  
+                  top: 19%;
+                  left: 32%;                  
+                }
 
+              }
               @media (min-width: 600px){
                 .resultado{
                   top: 17%;
