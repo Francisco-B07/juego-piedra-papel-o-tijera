@@ -570,13 +570,13 @@ function initWelcome(params) {
         }
 
         .titulo{
-          padding: 115px 34px 74px 34px;  
-          
+          padding: 115px 34px 74px 34px;          
         }
-        @media (min-width: 320px){
+        @media (max-width: 400px){
           .titulo{
-          padding: 60px 20px 60px 20px;  
+            padding: 80px 25px 74px 25px;          
           }
+
         }
 
         .container-boton{
@@ -600,7 +600,7 @@ function initWelcome(params) {
   <div class="container">
     <div class="container-page">
       <div class="titulo">    
-        <text-el tag="h1"> Piedra Papel </text-el>
+        <text-el tag="h1"> Papel Papel </text-el>
         <span>ó</span> 
         <text-el tag="h1">Tijera</text-el>
       </div>
@@ -773,6 +773,7 @@ function initPlay(params) {
     const imageURL = require("url:../../img/fondo.svg");
     const computerPlay = "";
     const SelectRandom = Math.floor(Math.random() * 3);
+    const contJugadas = 0;
     if (SelectRandom == 0) this.computerPlay = "piedra";
     else if (SelectRandom == 1) this.computerPlay = "papel";
     else if (SelectRandom == 2) this.computerPlay = "tijera";
@@ -946,25 +947,34 @@ function initPlay(params) {
     var papel = div.querySelector(".papel");
     var tijera = div.querySelector(".tijera");
     piedra.addEventListener("click", ()=>{
-        this.myPlay = "piedra";
-        piedra.classList.add("seleccionado");
-        papel.classList.add("no-seleccionado");
-        tijera.classList.add("no-seleccionado");
-        _state.state.whoWins(this.myPlay, this.computerPlay);
+        if (contJugadas == 0) {
+            this.myPlay = "piedra";
+            piedra.classList.add("seleccionado");
+            papel.classList.add("no-seleccionado");
+            tijera.classList.add("no-seleccionado");
+            _state.state.whoWins(this.myPlay, this.computerPlay);
+        }
+        this.contJugadas++;
     });
     papel.addEventListener("click", ()=>{
-        this.myPlay = "papel";
-        piedra.classList.add("no-seleccionado");
-        papel.classList.add("seleccionado");
-        tijera.classList.add("no-seleccionado");
-        _state.state.whoWins(this.myPlay, this.computerPlay);
+        if (contJugadas == 0) {
+            this.myPlay = "papel";
+            piedra.classList.add("no-seleccionado");
+            papel.classList.add("seleccionado");
+            tijera.classList.add("no-seleccionado");
+            _state.state.whoWins(this.myPlay, this.computerPlay);
+        }
+        this.contJugadas++;
     });
     tijera.addEventListener("click", ()=>{
-        const myPlay = "tijera";
-        piedra.classList.add("no-seleccionado");
-        papel.classList.add("no-seleccionado");
-        tijera.classList.add("seleccionado");
-        _state.state.whoWins(myPlay, this.computerPlay);
+        if (contJugadas == 0) {
+            const myPlay = "tijera";
+            piedra.classList.add("no-seleccionado");
+            papel.classList.add("no-seleccionado");
+            tijera.classList.add("seleccionado");
+            _state.state.whoWins(myPlay, this.computerPlay);
+        }
+        this.contJugadas++;
     });
     return div;
 }
@@ -1185,10 +1195,11 @@ function initButton() {
             text-align: center;
             color: #D8FCFC;
         }
-        @media (min-width: 320px){
+        @media (max-width: 400px){
           .root{
             font-size: 30px;
           }
+
         }
       `;
             this.shadow.appendChild(style);
@@ -1407,13 +1418,7 @@ function initEstrella() {
                 color: white; 
                 transform: rotate(-25deg);
               }
-              @media (min-width: 320px){
-                .resultado{                  
-                  top: 19%;
-                  left: 32%;                  
-                }
 
-              }
               @media (min-width: 600px){
                 .resultado{
                   top: 17%;
