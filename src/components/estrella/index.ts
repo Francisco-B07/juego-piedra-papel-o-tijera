@@ -32,8 +32,8 @@ export function initEstrella() {
 
             .resultado{
                 position: absolute;
-                top: 17%;
-                left: 33%;
+                top: 18%;
+                left: 31%;
                 color: white; 
                 transform: rotate(-25deg);
               }
