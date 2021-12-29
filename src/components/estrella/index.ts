@@ -37,13 +37,7 @@ export function initEstrella() {
                 color: white; 
                 transform: rotate(-25deg);
               }
-              @media (max-width: 400px){
-                .resultado{                  
-                  top: 19%;
-                  left: 32%;                  
-                }
 
-              }
               @media (min-width: 600px){
                 .resultado{
                   top: 17%;

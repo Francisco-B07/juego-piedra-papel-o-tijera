@@ -15,11 +15,6 @@ export function initButton() {
             text-align: center;
             color: #D8FCFC;
         }
-        @media (max-width: 400px){
-          .root{
-            font-size: 30px;
-          }
-        }
       `;
       this.shadow.appendChild(style);
       this.render();

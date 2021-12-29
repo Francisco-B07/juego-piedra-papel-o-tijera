@@ -29,13 +29,7 @@ export function initWelcome(params) {
         }
 
         .titulo{
-          padding: 115px 34px 74px 34px;  
-          
-        }
-        @media (max-width: 400px){
-          .titulo{
-          padding: 60px 20px 60px 20px;  
-          }
+          padding: 115px 34px 74px 34px;          
         }
 
         .container-boton{
@@ -60,7 +54,7 @@ export function initWelcome(params) {
   <div class="container">
     <div class="container-page">
       <div class="titulo">    
-        <text-el tag="h1"> Piedra Papel </text-el>
+        <text-el tag="h1"> Papel Papel </text-el>
         <span>ó</span> 
         <text-el tag="h1">Tijera</text-el>
       </div>
