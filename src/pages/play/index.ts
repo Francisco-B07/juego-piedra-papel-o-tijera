@@ -24,7 +24,7 @@ export function initPlay(params) {
     counter--;
 
     const elegido = div.querySelector(".seleccionado");
-    if (counter < 1 && elegido != null) {
+    if (counter == -1 && elegido != null) {
       elegido.classList.add("jugado");
       div.querySelector(".no-seleccionado").remove();
       div.querySelector(".no-seleccionado").remove();
@@ -48,7 +48,7 @@ export function initPlay(params) {
       }, 1000);
       clearInterval(intervalId);
     }
-    if (counter < 0) {
+    if (counter < -1) {
       params.goTo("/instructions");
       clearInterval(intervalId);
     }
