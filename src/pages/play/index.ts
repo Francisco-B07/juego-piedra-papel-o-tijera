@@ -5,6 +5,7 @@ export function initPlay(params) {
   const imageURL = require("url:../../img/fondo.svg");
   const computerPlay = "";
   const SelectRandom = Math.floor(Math.random() * (3 - 0));
+  const myPlay = "";
 
   if (SelectRandom == 0) {
     this.computerPlay = "piedra";
@@ -36,6 +37,7 @@ export function initPlay(params) {
       </div>
       `;
       contenedorPage.appendChild(computerSelect);
+      state.whoWins(this.myPlay, this.computerPlay);
 
       const intervalId2 = setInterval(() => {
         counter2++;
@@ -195,29 +197,35 @@ export function initPlay(params) {
 
   piedra.addEventListener("click", () => {
     this.myPlay = "piedra";
+    piedra.classList.remove("no-seleccionado");
+    papel.classList.remove("seleccionado");
+    tijera.classList.remove("seleccionado");
+
     piedra.classList.add("seleccionado");
     papel.classList.add("no-seleccionado");
     tijera.classList.add("no-seleccionado");
-
-    state.whoWins(this.myPlay, this.computerPlay);
   });
 
   papel.addEventListener("click", () => {
     this.myPlay = "papel";
+    piedra.classList.remove("seleccionado");
+    papel.classList.remove("no-seleccionado");
+    tijera.classList.remove("seleccionado");
+
     piedra.classList.add("no-seleccionado");
     papel.classList.add("seleccionado");
     tijera.classList.add("no-seleccionado");
-
-    state.whoWins(this.myPlay, this.computerPlay);
   });
 
   tijera.addEventListener("click", () => {
-    const myPlay = "tijera";
+    this.myPlay = "tijera";
+    piedra.classList.remove("seleccionado");
+    papel.classList.remove("seleccionado");
+    tijera.classList.remove("no-seleccionado");
+
     piedra.classList.add("no-seleccionado");
     papel.classList.add("no-seleccionado");
     tijera.classList.add("seleccionado");
-
-    state.whoWins(myPlay, this.computerPlay);
   });
 
   return div;
